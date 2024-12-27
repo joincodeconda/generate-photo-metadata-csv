@@ -1,8 +1,16 @@
 # generate-photo-metadata-csv
 
-In the world of photography, managing a vast library of images can be a daunting task. Efficiently organizing, tagging, and managing photo metadata is crucial for photographers who want to keep track of their work. While Adobe Lightroom offers a robust platform for managing photo libraries, it falls short when it comes to importing photo metadata directly from CSV files. However, by combining a Python script for generating metadata in CSV format and a third-party Lightroom plugin, photographers can streamline their workflow significantly. This post will guide you through this process, from generating a CSV file with your photo metadata using Python to importing that metadata into Adobe Lightroom.
+## Before You Continue: Consider the PhotoTag.ai Lightroom Plug-In
 
-## Step 1: Setting Up Python to Generate Your Photo Metadata CSV
+Since this blog post was published, PhotoTag.ai launched a custom Lightroom Plug-In, simplifying the process of generating metadata for your photos. [Download the PhotoTag.ai Lightroom Plug-In for free by clicking here.](https://www.phototag.ai/lightroom-plugin)
+
+## Step 1: Creating an Account with PhotoTag.ai and Generating an API Token
+
+To get started, head over to **[PhotoTag.ai’s API page](https://www.phototag.ai/api)** and create an account. After signing up, you will receive **10 free upload credits**, which you can use to generate automated keywords, titles, and descriptions for your images. If you need more credits, you can easily purchase additional ones within your PhotoTag.ai account.
+
+> **Disclaimer**: The uploaded files are only used to generate the keywords, title, and description at the time of upload. The original files are not saved or used for any other purpose. Only a low-resolution version of the file is saved so that you can see it in the album editor at [PhotoTag.ai](https://www.phototag.ai/).
+
+## Step 2: Setting Up Python to Generate Your Photo Metadata CSV
 
 Before diving into Lightroom, you'll need to generate a CSV file with your photos' metadata. A handy Python script available on GitHub makes this task straightforward. Here's how to get started:
 
@@ -15,7 +23,7 @@ If you don't have Python installed on your computer, you'll need to install it f
 Once Python is installed, you'll want to download the script that generates the CSV file. You can find the script at [this GitHub repository](https://github.com/joincodeconda/generate-photo-metadata-csv/blob/main/generate-photo-metadata-csv.py).
 
 1. Click on the link to view the script.
-2. Right-click on the page and select "Save As" to download the `.py` file to your computer.
+2. Right-click on the page and select "Save As" to download the .py file to your computer.
 3. Open your command line or terminal, navigate to the directory where you saved the script, and run the following command:
 
 ```shell
@@ -24,9 +32,9 @@ python generate-photo-metadata-csv.py
 
 This script will prompt you for the location of your photo library and then generate a CSV file containing the titles, descriptions, and keywords for all the photos.
 
-## Step 2: Importing Your CSV into Adobe Lightroom
+## Step 3: Importing Your CSV into Adobe Lightroom
 
-Adobe Lightroom does not natively support importing metadata from CSV files. To bridge this gap, we'll use a third-party plugin called LR/Transporter.
+Adobe Lightroom does not natively support importing metadata from CSV files. To bridge this gap, we'll use a third-party plugin called **LR/Transporter**.
 
 ### Installing and Configuring LR/Transporter
 
@@ -45,7 +53,7 @@ Before importing metadata, make sure your photos are already imported into Light
 3. Match the metadata fields from your CSV with the corresponding fields in Lightroom.
 4. Execute the import. The plugin will process the CSV file and apply the metadata to your photos in Lightroom.
 
-## Step 3: Verification and Adjustment
+## Step 4: Verification and Adjustment
 
 After the import process is complete, it's essential to verify that the metadata has been applied correctly. Select a photo and check its metadata panel to ensure accuracy. If you find any discrepancies, you can manually adjust the metadata within Lightroom.
 
